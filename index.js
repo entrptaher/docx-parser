@@ -1,4 +1,5 @@
 const decompress = require('decompress');
+const path = require('path');
 
 var parseDocx = function(filename, outputPath='dist', callback){
   decompress(filename, outputPath).then(files => {
