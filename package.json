@@ -10,8 +10,5 @@
   "license": "ISC",
   "dependencies": {
     "decompress": "^4.0.0"
-  },
-  "_id": "docx-parser@0.1.10",
-  "_shasum": "29cefda841c5d671c8ad3fa37d91b1f5cb69bc0f",
-  "_from": "docx-parser@latest"
+  }
 }
