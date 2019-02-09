@@ -1,13 +1,12 @@
 const decompress = require('decompress');
 
-var parseDocx = function(filename, callback){
-  decompress(filename, 'dist').then(files => {
+var parseDocx = function(filename, outputPath='dist', callback){
+  decompress(filename, outputPath).then(files => {
     fs = require('fs')
-    fs.readFile('dist/word/document.xml', 'utf8', function (err,data) {
+    fs.readFile(path.resolve(outputPath +'/word/document.xml'), 'utf8', function (err,data) {
 	     if (err) {
    	     return console.log(err);
  	     }
-
     	var plain_text = data.replace(/(<w:p )[\s\S]*?>/g,"\n<w:p").replace(/(<([^>]+)>)/ig, "");
     	callback(plain_text);
     });
